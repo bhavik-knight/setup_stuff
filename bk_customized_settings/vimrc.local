@@ -1,0 +1,17 @@
+set number
+set relativenumber
+set wrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set laststatus=3
+set expandtab
+set ruler
+set nocompatible
+set showmode
+set showcmd
+set cursorline
+set foldenable
+colorscheme slate
+syntax on
+
