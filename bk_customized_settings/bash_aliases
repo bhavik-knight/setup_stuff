@@ -1,11 +1,14 @@
-################################################################################
+#################################################################################
 # make python3 the default python
 alias python=python3
 
-# make "pywin" command use the latest windows python installtion (v3.8)
-alias pywin="/mnt/c/Program\ Files/Python38/python.exe"
+# make "pywin" command use the latest windows python installtion (v3.9)
+alias pywin="/mnt/c/Program\ Files/Python39/python.exe"
 
-# make "pywin37" command use windows python installation
+# make "pywin36" command use windows python installation v3.6
+alias pywin36="/mnt/c/Program\ Files/Python36/python.exe"
+
+# make "pywin37" command use windows python installation v3.7
 alias pywin37="/mnt/c/Program\ Files/Python37/python.exe"
 ################################################################################
 
@@ -16,24 +19,37 @@ alias pywin37="/mnt/c/Program\ Files/Python37/python.exe"
 
 ################################################################################
 # invoke pycharm using "charm" command
-alias charm="/mnt/c/Program\ Files/JetBrains/PyCharm\ Community\ Edition\ 2020.1/bin/pycharm64.exe"
+# alias charm="/mnt/c/Program\ Files/JetBrains/PyCharm\ Community\ Edition\ 2020.2.3/bin/pycharm64.exe"
+alias charm="/mnt/c/Program\ Files/JetBrains/PyCharm\ Community\ Edition\ with\ Anaconda\ plugin\ 2020.2.3/bin/pycharm64.exe"
+################################################################################
+
+################################################################################
+# invoke IntelliJ IDEA using "idea" command
+alias idea="/mnt/c/Program\ Files\ \(x86\)/JetBrains/IntelliJ\ IDEA\ Community\ Edition\ 2020.1/bin/idea64.exe"
 ################################################################################
 
 ################################################################################
 # path variables for cs50
 export CC="clang"
 export CFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
-export LDLIBS="-lcrypt -lcs50 -lm"
+# export LDLIBS="-lcrypt -lcs50 -lm"
+################################################################################
+
+################################################################################
+# path variables for csci162
+export CXX="g++"
+export CXXFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 -O0 -std=c++11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow"
+#export CXXFLAGS="-ggdb3 -O0 -std=c++11 -Wall -Werror -Wextra"
 ################################################################################
 
 ################################################################################
 # powerline prompt customization
 function _update_ps1() {
-        PS1=$(powerline-shell $?)
-    }
+    PS1=$(powerline-shell $?)
+}
 
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 ################################################################################
 
