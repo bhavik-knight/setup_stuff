@@ -1,0 +1,20 @@
+
+1. 
+install zshell
+sudo apt install zsh -y
+
+
+2. 
+check current default
+echo $SHELL
+
+make zshell default shell
+chsh -s (which zsh)
+
+3.
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.bash_aliases
+echo 'source ~/.bash_aliases' >> .zshrc
+
+4. 
+configuration wizard will be there hopefully, should above steps are done correctly

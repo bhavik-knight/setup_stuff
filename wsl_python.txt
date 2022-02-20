@@ -1,0 +1,13 @@
+https://docs.python-guide.org/starting/install3/linux/#install3-linux
+
+
+
+#.
+make python3.10 default python3
+sudo update-alternatives --install /usr/bin/python3 python /usr/bin/python3.10 1
+
+
+#.
+install pip etc
+sudo apt install python3-venv
+sudo apt install python3-pip
