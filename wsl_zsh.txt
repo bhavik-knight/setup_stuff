@@ -1,0 +1,31 @@
+1.
+install zsh
+sudo apt install zsh
+
+2.
+change default shell
+chsh -s /usr/bin/zsh
+echo $SHELL
+
+3.
+oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+4.
+configure
+p10k configure
+
+5.
+syntax highlight
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+
+6.
+auto suggestions/ autocomplete
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions 
+
+7. 
+enable both syntax highlight and autosuggestion plugins in zshrc
+plugins=( git zsh-syntax-highlighting zsh-autosuggestions )
+
+8.
