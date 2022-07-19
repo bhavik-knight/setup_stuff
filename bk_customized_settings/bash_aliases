@@ -1,4 +1,11 @@
 ################################################################################
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+################################################################################
+
+################################################################################
 # make python3 the default python
 alias python=python3.9
 
@@ -47,13 +54,7 @@ export CXXFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 
 ################################################################################
 
 ################################################################################
-# powerline prompt customization
-function _update_ps1() {
-        PS1=$(powerline-shell $?)
-    }
-
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+# make powerlevel10k promot fancy
+# source ~/.powerlevel10k/powerlevel10k.zsh-theme
 ################################################################################
 
