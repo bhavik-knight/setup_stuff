@@ -1,31 +1,52 @@
 1.
 install zsh
+--------------------------------------------------------------------------------
 sudo apt install zsh
+--------------------------------------------------------------------------------
 
 2.
 change default shell
+--------------------------------------------------------------------------------
 chsh -s /usr/bin/zsh
 echo $SHELL
+--------------------------------------------------------------------------------
 
 3.
 oh-my-zsh
+--------------------------------------------------------------------------------
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+--------------------------------------------------------------------------------
 
 4.
-configure
-p10k configure
+install powerlevel10k
+--------------------------------------------------------------------------------
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.bash_aliases
+echo 'source ~/.bash_aliases' >> .zshrc
+--------------------------------------------------------------------------------
 
 5.
-syntax highlight
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-
+configure
+--------------------------------------------------------------------------------
+p10k configure
+--------------------------------------------------------------------------------
 
 6.
-auto suggestions/ autocomplete
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions 
+syntax highlight
+--------------------------------------------------------------------------------
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+--------------------------------------------------------------------------------
 
-7. 
-enable both syntax highlight and autosuggestion plugins in zshrc
-plugins=( git zsh-syntax-highlighting zsh-autosuggestions )
+7.
+auto suggestions/ autocomplete
+--------------------------------------------------------------------------------
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+--------------------------------------------------------------------------------
 
 8.
+enable both syntax highlight and autosuggestion plugins in zshrc
+--------------------------------------------------------------------------------
+plugins=( git zsh-syntax-highlighting zsh-autosuggestions )
+--------------------------------------------------------------------------------
+
+#.
