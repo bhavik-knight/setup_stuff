@@ -1,3 +1,12 @@
+
+################################################################################
+# for lamp-stack
+alias lampstatus="sudo service apache2 status ; sudo service mysql status"
+alias lampstart="sudo service mysql start ; sudo service apache2 start"
+alias lampstop="sudo service mysql stop ; sudo service apache2 stop"
+alias lamprestart="lampstop ; lampstart"
+################################################################################
+
 ################################################################################
 # some more ls aliases
 alias ll='ls -alF'
@@ -51,4 +60,3 @@ export CXXFLAGS="-fsanitize=signed-integer-overflow -fsanitize=undefined -ggdb3 
 # make powerlevel10k promot fancy
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 ################################################################################
-

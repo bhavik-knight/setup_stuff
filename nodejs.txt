@@ -1,0 +1,29 @@
+install nodejs in wsl-ubuntu
+
+1. update and upgrade wsl-ubuntu
+--------------------------------------------------------------------------------
+sudo apt update -y
+sudo apt upgrade -y
+--------------------------------------------------------------------------------
+
+
+2. download and install node for bash (16.x indicates node version 16 LTS)
+--------------------------------------------------------------------------------
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+--------------------------------------------------------------------------------
+
+3. check these 3 and should give you a path if installed correctly
+--------------------------------------------------------------------------------
+which node
+which npm
+which npx
+--------------------------------------------------------------------------------
+
+4. if we want multiple node versions and want to be able to switch as needed
+we need nvm for that. Installation: https://github.com/nvm-sh/nvm#intro
+--------------------------------------------------------------------------------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+--------------------------------------------------------------------------------
+follow the export line from the terminal to set the PATH. It's important to do.
+
