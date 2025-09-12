@@ -1,2 +1,0 @@
-# gnome tweaks for clock override
-sudo apt install gnome-tweaks

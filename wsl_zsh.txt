@@ -27,7 +27,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 5.
 set powerlevel10k as ZSH_THEME in .zshrc
 --------------------------------------------------------------------------------
-ZSH_THEME="powerlevel10k/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 --------------------------------------------------------------------------------
 - restart the terminal
 --------------------------------------------------------------------------------
