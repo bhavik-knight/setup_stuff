@@ -1,15 +1,28 @@
 -- Rename the file: .wezterm.lua and put it in the home directory
 
+
 -- Pull in the wezterm API
 local wezterm = require "wezterm"
 
+
 -- This will hold the configuration.
 local config = {}
+
 
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+
+-- color scheme
+config.color_scheme = "Monokai (terminal.sexy)"
+-- "Catppuccin Frappe (Gogh)"
+-- "Dracula+"
+-- "Horizon Dark (Gogh)"
+-- "iTerm2 Pastel Dark Background"
+-- "Neon (terminal.sexy)"
+-- "Nord"
+-- "Sequoia Moonlight"
 
 
 local mux = wezterm.mux
@@ -20,55 +33,67 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 
--- color scheme
-config.color_scheme = "Dracula"
-
 -- Resize
 local act = wezterm.action
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "RESIZE | TITLE"
+
 
 -- This is where you actually apply your config choices.
-
 -- For example, changing the initial geometry for new windows:
---[[
 config.initial_cols = 120
 config.initial_rows = 40
-]]
+
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font_with_fallback {
+    "ComicShannsMono Nerd Front",
     "MesloLGS NF",
     "Fira Code",
     "JetBrainsMono Nerd Font"
 }
-config.font_size = 13
 
--- tabs
-config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
-config.show_new_tab_button_in_tab_bar = true
-config.use_fancy_tab_bar = true
+
+-- size, bold, bright
+config.font_size = 16
+config.bold_brightens_ansi_colors = "BrightAndBold"
+
 
 -- background
 config.window_background_opacity = .98
 
--- bold
-config.bold_brightens_ansi_colors = "BrightAndBold"
 
-
--- Display tab navigator: https://ansidev.substack.com/p/wezterm-cheatsheet
-config.keys = {
-  {
-    key = 't',
-    mods = 'CMD|SHIFT',
-    action = act.ShowTabNavigator,
-  },
-  -- other keys
-}
+-- tabs & tabar
+config.use_fancy_tab_bar = true
+config.enable_tab_bar = true
+config.show_new_tab_button_in_tab_bar = true
+config.tab_max_width = 24
+config.hide_tab_bar_if_only_one_tab = false
 
 
 -- show info about updates
 config.show_update_window = true
+
+
+-- other keys
+config.keys = {
+    -- Display tab navigator: https://ansidev.substack.com/p/wezterm-cheatsheet
+    {
+        key = 't',
+        mods = 'SHIFT | CMD',
+        action = act.ShowTabNavigator,
+    },
+
+    -- close current tab without confirmation
+    {
+        key = "w",
+        mods = "SHIFT | CTRL",
+        action = wezterm.action.CloseCurrentPane { confirm = false },
+    },
+}
+
+
+-- don't show confirmation dialogue
+config.window_close_confirmation = "NeverPrompt"
 
 
 -- close warning message turn off
