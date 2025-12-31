@@ -46,7 +46,7 @@ config.initial_rows = 40
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font_with_fallback {
-    "ComicShannsMono Nerd Front",
+    "ComicShannsMono Nerd Font",
     "MesloLGS NF",
     "Fira Code",
     "JetBrainsMono Nerd Font"
@@ -54,7 +54,7 @@ config.font = wezterm.font_with_fallback {
 
 
 -- size, bold, bright
-config.font_size = 16
+config.font_size = 18
 config.bold_brightens_ansi_colors = "BrightAndBold"
 
 
