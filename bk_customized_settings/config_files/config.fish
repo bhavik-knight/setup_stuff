@@ -6,7 +6,7 @@ if status is-interactive
     # 0. Other aliases  
     alias cat="batcat"
     alias grep="rg"
-    alias find="fd"
+    alias find="fdfind"
     alias ff="fastfetch"
 
 
